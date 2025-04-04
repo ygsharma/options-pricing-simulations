@@ -6,16 +6,16 @@ An interactive web application and REST API for pricing European options using:
 - 🎲 Monte Carlo Simulation
 - 🌲 Binomial Tree Model
 
-## 🌐 Live Web App
+## Live Web App
 Deployed on Google Cloud using Docker and Streamlit (see `app.yaml`).
 
-## 🚀 Features
+## Features
 - Real-time price data from Yahoo Finance
 - Caching via `requests-cache`
 - Interactive Streamlit UI
 - REST API with FastAPI
 
-## 📦 Project Structure
+## Project Structure
 ```
 option-pricing-simulator/
 ├── option_pricing/          # Model implementations
@@ -29,16 +29,16 @@ option-pricing-simulator/
 └── README.md                # Project overview
 ```
 
-## 🧪 REST API Example
+## REST API Example
 `GET /price?model=black-scholes&S=100&K=100&T=1&r=0.05&sigma=0.2&option_type=call`
 
-## 🐳 Docker Deployment
+## Docker Deployment
 ```bash
 docker build -t option-pricing .
 docker run -p 8080:8080 option-pricing
 ```
 
-## ☁️ GCP Deployment
+## GCP Deployment
 ```bash
 gcloud app deploy
 ```
