@@ -1,6 +1,26 @@
+import math
+
 def binomial_tree_price(S, K, T, r, sigma, option_type="call", steps=200):
+    """
+    Calculate the price of a European option using Binomial Tree method.
+    
+    Args:
+        S: Current price of the underlying asset (spot price)
+        K: Strike price of 1option
+        T: Time t maturity in years
+        r: Risk-free interest rate (annualized)
+        sigma: Volatility of the underlying asset (annualized)
+        option_type: 'call' or 'put'
+        steps: Number of time steps in binomial tree (default = 200)
+        
+    Returns:
+        Estimated price of European option using the binomial tree model.
+    
+    """
+    
     if T <= 0 or sigma <= 0:
         raise ValueError("Time to maturity and volatility must be positive.")
+    
     dt = T / steps
     u = math.exp(sigma * math.sqrt(dt))
     d = 1 / u
