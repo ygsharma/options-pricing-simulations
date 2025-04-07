@@ -21,6 +21,9 @@ def binomial_tree_price(S, K, T, r, sigma, option_type="call", steps=200):
     if T <= 0 or sigma <= 0:
         raise ValueError("Time to maturity and volatility must be positive.")
     
+    if option_type not in ['call', 'put']:
+        raise ValueError("option_type must be 'call' or 'put'.")
+    
     dt = T / steps
     u = math.exp(sigma * math.sqrt(dt))
     d = 1 / u

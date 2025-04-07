@@ -19,12 +19,10 @@ Deployed on Google Cloud using Docker and Streamlit (see `app.yaml`).
 ```
 option-pricing-simulator/
 ├── option_pricing/          # Model implementations
-├── demo/                    # GIFs/screenshots
 ├── streamlit_app.py         # Streamlit web interface
-├── api.py                   # FastAPI REST backend
+├── api.py                   # FastAPI REST backend(Not implemented)
 ├── option_pricing_test.py   # CLI tests
 ├── Dockerfile               # Docker config
-├── app.yaml                 # GCP deployment config
 ├── Requirements.txt         # Dependencies
 └── README.md                # Project overview
 ```

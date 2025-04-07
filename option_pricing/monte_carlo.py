@@ -20,6 +20,9 @@ def monte_carlo_price(S, K, T, r, sigma, option_type="call", num_simulations=100
     if T <= 0 or sigma <= 0:
         raise ValueError("Time to maturity and volatility must be positive.")
     
+    if option_type not in ['call', 'put']:
+        raise ValueError("option_type must be 'call' or 'put'.")
+    
     Z = np.random.standard_normal(num_simulations)
     ST = S * np.exp((r - 0.5 * sigma ** 2) * T + sigma * np.sqrt(T) * Z)
     payoff = np.maximum(ST - K, 0) if option_type == "call" else np.maximum(K - ST, 0)
