@@ -3,3 +3,5 @@ numpy
 scipy
 yfinance
 requests-cache
+python-dotenv
+requests

@@ -3,3 +3,6 @@ venv/*
 *.sqlite
 __pycache__/*
 */__pycache__/*
+*.env
+logs/*
+.streamlit/*
