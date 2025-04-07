@@ -4,31 +4,12 @@ from option_pricing.monte_carlo import monte_carlo_price
 from option_pricing.binomial_tree import binomial_tree_price
 import yfinance as yf
 import requests_cache
-import requests
 from datetime import datetime
 import numpy as np
 import os
-from dotenv import load_dotenv
 
 # Setup cache and logging directory
 requests_cache.install_cache("yfinance_cache", backend="sqlite", expire_after=1800)
-
-load_dotenv()
-FINHUB_API_KEY = os.getenv("FINNHUB_API_KEY")
-
-def autocomplete_ticker(query):
-    if not query:
-        return []
-    try:
-        response = requests.get(
-            f"https://finnhub.io/api/v1/search?q={query}&token=YOUR_FINNHUB_API_KEY"
-        )
-        results = response.json().get("result", [])
-        return [item["symbol"] for item in results if "symbol" in item]
-    except Exception as e:
-        st.warning(f"Autocomplete error: {e}")
-        return []
-
 
 def log_invalid_ticker(ticker):
     today = datetime.now().strftime("%Y-%m-%d")
