@@ -1,42 +1,32 @@
 # Option Pricing Simulator
 
-An interactive web application and REST API for pricing European options using:
+An interactive web application for pricing European options using:
 
-- 📈 Black-Scholes Model
-- 🎲 Monte Carlo Simulation
-- 🌲 Binomial Tree Model
-
-## Live Web App
-Deployed on Google Cloud using Docker and Streamlit (see `app.yaml`).
-
-## Features
-- Real-time price data from Yahoo Finance
-- Caching via `requests-cache`
-- Interactive Streamlit UI
-- REST API with FastAPI
+- Black-Scholes Model
+- Monte Carlo Simulation
+- Binomial Tree Model
 
 ## Project Structure
 ```
 option-pricing-simulator/
 ├── option_pricing/          # Model implementations
 ├── streamlit_app.py         # Streamlit web interface
-├── api.py                   # FastAPI REST backend(Not implemented)
+├── api.py                   # FastAPI REST backend(To be implemented)
 ├── option_pricing_test.py   # CLI tests
 ├── Dockerfile               # Docker config
 ├── Requirements.txt         # Dependencies
 └── README.md                # Project overview
 ```
 
-## REST API Example
-`GET /price?model=black-scholes&S=100&K=100&T=1&r=0.05&sigma=0.2&option_type=call`
+## How to Run
+
+```bash
+pip install -r requirements.txt
+python -m streamlit run streamlit_app.py
+```
 
 ## Docker Deployment
 ```bash
 docker build -t option-pricing .
 docker run -p 8080:8080 option-pricing
-```
-
-## GCP Deployment
-```bash
-gcloud app deploy
 ```
