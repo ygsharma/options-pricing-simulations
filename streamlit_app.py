@@ -3,13 +3,13 @@ from option_pricing.black_scholes import black_scholes_price
 from option_pricing.monte_carlo import monte_carlo_price
 from option_pricing.binomial_tree import binomial_tree_price
 import yfinance as yf
-import requests_cache
+# import requests_cache
 from datetime import datetime
 import numpy as np
 import os
 
 # Setup cache and logging directory
-requests_cache.install_cache("yfinance_cache", backend="sqlite", expire_after=1800)
+# requests_cache.install_cache("yfinance_cache", backend="sqlite", expire_after=1800)
 
 def log_invalid_ticker(ticker):
     today = datetime.now().strftime("%Y-%m-%d")
