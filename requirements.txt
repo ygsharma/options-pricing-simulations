@@ -1,7 +1,7 @@
-streamlit
-numpy
+streamlit>=1.20.0
+numpy>=1.22.0
 scipy
-yfinance
-requests-cache
+yfinance>=0.2.12
+requests-cache>=0.9.8
 python-dotenv
 requests

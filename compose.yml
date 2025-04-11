@@ -1,0 +1,13 @@
+services:
+  options-pricing-app:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    expose:
+      - "8501"
+    volumes:
+      - ./logs:/app/logs
+      - ./yfinance_cache.sqlite:/app/yfinance_cache.sqlite
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
